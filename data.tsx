@@ -122,7 +122,7 @@ export const projects = [
       { name: "Git", icon: <FaGitAlt /> },
     ],
     hrfCode: `#projects`,
-    hrfDemo: `/`,
+    hrfDemo: `https://github.com/Joaokiller360/protfolio-comunidad`,
     imageUrl: "/mockup/mockup-portfolio.png",
     imageAlt: "A descriptive image for the button",
   }
