@@ -26,6 +26,17 @@ export const socialMedia = [
   }
 ]
 
+export const about = [
+  {
+    tilte: 'Sobre mí',
+    descriptions: `Soy un desarrollador web apasionado por crear soluciones innovadoras.
+                Con experiencia en tecnologías frontend y backend, me encanta enfrentar
+                nuevos desafíos y aprender constantemente. Mi objetivo es construir
+                aplicaciones web que no solo funcionen perfectamente, sino que también
+                ofrezcan una experiencia de usuario excepcional.`
+  }
+]
+
 export const itemsNavbar = [
   {
     id: 1,
@@ -64,8 +75,8 @@ export const skills = [
   { name: "Tailwind CSS", icon: <SiTailwindcss /> },
   { name: "Git", icon: <FaGitAlt /> },
   { name: "Wordpress", icon: <SiWordpress /> },
-  { name: 'Strapi', icon: <SiStrapi/> },
-  { name: 'Framer', icon: <SiFramer/> },
+  { name: 'Strapi', icon: <SiStrapi /> },
+  { name: 'Framer', icon: <SiFramer /> },
 ];
 
 export const projects = [
