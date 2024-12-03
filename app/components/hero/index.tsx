@@ -24,9 +24,13 @@ export default function Hero() {
 
           </ScrollRevealEffect>
           <ScrollRevealEffect>
-            <div className="pt-5">
-              <Button hrf="#projects" text="Ver mis proyectos" />
+            <div className="pt-5 flex justify-center">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button hrf="#projects" text="Ver mis proyectos" />
+                <Button hrf="./curriculum/cv.pdf" text="Descargar CV" download />
+              </div>
             </div>
+
           </ScrollRevealEffect>
         </div>
       </section>
