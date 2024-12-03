@@ -7,7 +7,9 @@ export default function Home() {
       <main className="container grid justify-center items-center mx-auto px-5">
         <About />
         <Skill />
+        
         <Projects />
+        
       </main>
       <footer>
         <Footer />
