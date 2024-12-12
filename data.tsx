@@ -121,7 +121,7 @@ export const projects = [
       { name: "Tailwind CSS", icon: <SiTailwindcss /> },
       { name: "Git", icon: <FaGitAlt /> },
     ],
-    hrfCode: `#projects`,
+    hrfCode: `https://github.com/Joaokiller360/protfolio-comunidad`,
     hrfDemo: `https://github.com/Joaokiller360/protfolio-comunidad`,
     imageUrl: "/mockup/mockup-portfolio.png",
     imageAlt: "A descriptive image for the button",
