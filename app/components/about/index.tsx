@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section className="flex justify-center items-center w-full py-16" id="about">
       {about.map((about, index) => (
-        <div className="bg-sectionColor py-16 rounded-3xl w-full text-foreground" key={index}>
+        <div className="bg-sectionColor py-16 rounded-3xl w-full text-white" key={index}>
           <ScrollRevealEffect>
             <h2 className="text-3xl font-bold mb-8 text-center">{about.tilte}</h2>
           </ScrollRevealEffect>

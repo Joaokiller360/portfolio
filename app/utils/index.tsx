@@ -1,15 +1,18 @@
 import { ScrollRevealEffect, ScrollRevealRightEffect } from './animation/animations'
-import { Button, ButtonNav } from './button/button'
+import { ButtonC, ButtonNav, ButtonModal } from './button/button'
 import { Skills, Skil } from './skills/skills'
 import Cards from './cards/cads'
 import SocialMedia from './socialMedia/socialMedia'
 import { CheckIcon, CopyIcon } from './icons/icons'
-import {Email} from './emails'
+import { Email } from './emails'
+import { ModalPreview } from './modal'
+import Tags from './tags'
 
 export {
   ScrollRevealEffect,
   ScrollRevealRightEffect,
-  Button,
+  ButtonC,
+  ButtonModal,
   ButtonNav,
   Skills,
   Skil,
@@ -17,5 +20,7 @@ export {
   SocialMedia,
   CopyIcon,
   CheckIcon,
-  Email
+  Email,
+  ModalPreview,
+  Tags
 }

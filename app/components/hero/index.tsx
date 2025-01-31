@@ -1,11 +1,11 @@
-import { ScrollRevealEffect, Button, ScrollRevealRightEffect, SocialMedia, Email } from "@/app/utils";
+import { ScrollRevealEffect, ButtonC, ScrollRevealRightEffect, SocialMedia, Email } from "@/app/utils";
 import { Image } from "@nextui-org/react";
 import { userName } from '@/data'
 
 export default function Hero() {
   return (
     <>
-      <section className="w-full h-dvh flex items-center justify-center text-center bg-gradient-to-br from-secondary to-background relative">
+      <section className="w-full h-dvh flex items-center justify-center text-center from-secondary to-background relative">
         <div className="fade-in max-w-4xl">
           <ScrollRevealEffect>
             {userName.map((user, index) => (
@@ -26,8 +26,8 @@ export default function Hero() {
           <ScrollRevealEffect>
             <div className="pt-5 flex justify-center">
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button hrf="#projects" text="Ver mis proyectos" />
-                <Button hrf="./curriculum/cv.pdf" text="Descargar CV" download />
+                <ButtonC hrf="#projects" text="Ver mis proyectos" />
+                <ButtonC hrf="./curriculum/cv.pdf" text="Descargar CV" download />
               </div>
             </div>
 

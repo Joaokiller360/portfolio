@@ -81,8 +81,9 @@ export const skills = [
 
 export const projects = [
   {
-    title: "JB OCESE",
-    description: "Una web moderna creada para una empresa.",
+    titleProject: "Web Empresarial",
+    clientProject: "Jb Oceanic Services Ocese S.A.",
+    description: "Desarrollé la página web de JB OCEANIC SERVICES OCESE SA utilizando tecnologías modernas como TypeScript, React y Next.js, garantizando un sitio rápido, escalable y optimizado para SEO. Implementé Tailwind CSS para un diseño elegante y responsivo, asegurando una experiencia de usuario fluida en cualquier dispositivo. Además, utilicé Git para el control de versiones, facilitando la colaboración y el mantenimiento eficiente del proyecto. 🚀",
     tag: [
       { name: "TypeScript", icon: <SiTypescript /> },
       { name: "React", icon: <FaReact /> },
@@ -96,8 +97,9 @@ export const projects = [
     imageAlt: "A descriptive image for the button",
   },
   {
-    title: "Jack Burger",
-    description: "Plataforma de menú para un pequeño local.",
+    titleProject: "Menu Digital",
+    clientProject: "Los Jack Burgers",
+    description: "Desarrollé el menú digital de Las Jack Burger utilizando la tecnología de Strapi, creando una solución flexible y fácil de gestionar para el local. Implementé una interfaz interactiva que permite actualizar el contenido del menú de forma sencilla y eficiente. La integración con Strapi facilitó la administración del menú, permitiendo al equipo de Las Jack Burger modificar precios, ingredientes y categorías de manera intuitiva. Además, aseguré una experiencia de usuario fluida y atractiva, garantizando que el menú sea accesible y fácil de usar en dispositivos móviles y de escritorio. 🍔🚀",
     tag: [
       { name: "TypeScript", icon: <SiTypescript /> },
       { name: "React", icon: <FaReact /> },
@@ -112,7 +114,8 @@ export const projects = [
     imageAlt: "A descriptive image for the button",
   },
   {
-    title: "Portafolio Para La comunidad",
+    titleProject: "Portafolio",
+    clientProject: "Portafolio Para La comunidad",
     description: "Este es un pequeño portafolio que puedes agarrar como inspiracion.",
     tag: [
       { name: "TypeScript", icon: <SiTypescript /> },

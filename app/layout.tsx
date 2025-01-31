@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import * as React from "react";
 import { Header } from "@/app/components/";
 import { Analytics } from "@vercel/analytics/react"
-
+import { Providers } from '@/app/components'
 export const metadata: Metadata = {
   title: "Portafolio",
   description: "Create Portafoli By JB",
@@ -19,8 +20,10 @@ export default function RootLayout({
         <link rel="icon" href="/media/joaoDev.webp" />
       </head>
       <body>
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
       <Analytics />
     </html>

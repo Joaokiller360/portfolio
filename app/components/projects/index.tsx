@@ -11,7 +11,8 @@ export default function Projects() {
           {projects.map((project, index) => (
             <Cards
               key={`${index}`}
-              title={`${project.title}`}
+              titleProject={`${project.titleProject}`}
+              clientProject={`${project.clientProject}`}
               description={`${project.description}`}
               tag={project.tag}
               hrfCode={project.hrfCode}
