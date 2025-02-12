@@ -1,23 +1,33 @@
+'use client'
+
 import { ScrollRevealEffect, ButtonC, ScrollRevealRightEffect, SocialMedia, Email } from "@/app/utils";
 import { Image } from "@nextui-org/react";
-import { userName } from '@/data'
+import { useEffect, useState } from "react";
+import { UserName, fetchUserName } from '@/api/getUserName'
 
 export default function Hero() {
+
+  const [userName, setUserName] = useState<UserName[]>([]);
+
+  useEffect(() => {
+    fetchUserName().then(setUserName);
+  }, []);
+
   return (
     <>
       <section className="w-full h-dvh flex items-center justify-center text-center from-secondary to-background relative">
         <div className="fade-in max-w-4xl">
           <ScrollRevealEffect>
-            {userName.map((user, index) => (
-              <div key={index}>
+            {userName.map(({ dev, id, userName, email }) => (
+              <div key={id}>
                 <h1 className="text-5xl font-bold mb-4 gradient-text">
-                  Hola, soy {user.userName} 👋
+                  Hola, soy {userName} 👋
                 </h1>
                 <p className="text-xl mb-4 text-muted-foreground">
-                  {user.dev}
+                  {dev}
                 </p>
 
-                <Email text={`${user.email}`} />
+                <Email text={`${email}`} />
               </div>
             ))}
             <SocialMedia />
