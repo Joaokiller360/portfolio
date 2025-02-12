@@ -4,9 +4,11 @@ export interface Socialmedia {
   id: number;
 }
 
+const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL
+
 export const fetchSocialMedias = async (): Promise<Socialmedia[]> => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKND_URL}/api/social-media-porfolios`);
+    const response = await fetch(`${apiUrl}/api/social-media-porfolios`);
     const data = await response.json();
 
     if (!data || !data.data) {
@@ -16,7 +18,7 @@ export const fetchSocialMedias = async (): Promise<Socialmedia[]> => {
 
     return data.data.map((item: any) => ({
       id: item.id ?? 0, // Asegurar que haya un ID
-      icon: item.Icon ?? "", 
+      icon: item.Icon ?? "",
       link: item.Link ?? "",
     }));
   } catch (error) {
