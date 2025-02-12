@@ -1,3 +1,5 @@
+import { GetStaticProps } from 'next';
+
 export interface Skills {
   icon: string;
   iconName: string;
@@ -25,4 +27,13 @@ export const fetchSkills = async (): Promise<Skills[]> => {
     console.error("Error al obtener los datos:", error);
     return [];
   }
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await fetchSkills();
+
+  return {
+    props: { data },
+    revalidate: 120, // Revalida cada 10 segundos
+  };
 };

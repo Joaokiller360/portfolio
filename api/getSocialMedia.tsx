@@ -1,3 +1,5 @@
+import { GetStaticProps } from 'next';
+
 export interface Socialmedia {
   icon: string;
   link: string;
@@ -25,4 +27,13 @@ export const fetchSocialMedias = async (): Promise<Socialmedia[]> => {
     console.error("Error al obtener los datos:", error);
     return [];
   }
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await fetchSocialMedias();
+
+  return {
+    props: { data },
+    revalidate: 120, // Revalida cada 10 segundos
+  };
 };
