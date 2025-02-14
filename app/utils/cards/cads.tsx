@@ -10,9 +10,13 @@ interface ButtonNavProps {
   description?: string;
   hrfCode?: string;
   hrfDemo?: string;
-  tag?: { name: string; icon: React.ReactNode }[];
-  imageUrl?: string;         // URL de la imagen
-  imageAlt?: string;         // Texto alternativo para la imagen (accesibilidad)
+  tag?: {
+    id: number;
+    IconName: string;
+    Icon: string | null // El tipo ahora es ReactNode, no un string
+  }[];
+  imageUrl?: string;
+  imageAlt?: string;
 }
 
 export default function Cards({

@@ -15,7 +15,11 @@ interface ModalDescriptions {
   description?: string;
   hrfCode?: string;
   hrfDemo?: string;
-  tag?: { name: string; icon: React.ReactNode }[];
+  tag?: {
+    id: number;
+    IconName: string;
+    Icon: string | null // El tipo ahora es ReactNode, no un string
+  }[];
 }
 
 export function ModalPreview({
@@ -57,7 +61,11 @@ export function ModalPreview({
                   <div>
                     <p className='text-lg'>Tecnologias que se uso:</p>
                     <div className='pt-2'>
-                      <Tags tag={tag} />
+                      <Tags tag={tag?.map(t => ({
+                        id: t.id,
+                        IconName: t.IconName, // Asegura que coincide con la estructura esperada
+                        Icon: t.Icon // Mantiene la consistencia si es correcto
+                      }))} />
                     </div>
                   </div>
                 </div>
