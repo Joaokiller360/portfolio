@@ -10,7 +10,7 @@ const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL
 
 export const fetchSocialMedias = async (): Promise<Socialmedia[]> => {
   try {
-    const response = await fetch(`${apiUrl}/api/social-media-porfolios`);
+    const response = await fetch(`${apiUrl}/api/social-medias`);
     const data = await response.json();
 
     if (!data || !data.data) {

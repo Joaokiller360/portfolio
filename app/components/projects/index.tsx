@@ -31,7 +31,8 @@ export default function Projects() {
           tag: project.tag?.map((t: any) => ({
             id: t.id,
             IconName: t.IconName || 'Sin nombre',
-            Icon: t.Icon || null, // En lugar de convertir a ReactNode, dejamos el nombre del icono
+            Icon: t.Icon || null, // En lugar de convertir a ReactNode, dejamos el nombre del icono,
+            image: t.image?.data?.attributes?.url || '/mockup/mokaps-jb-ocese.png'
           })),
         }));
         
@@ -62,7 +63,7 @@ export default function Projects() {
                 hrfCode={project.hrfCode}
                 hrfDemo={project.hrfDemo}
                 tag={project.tag}
-                imageUrl='/mockup/mokaps-jb-ocese.png'
+                imageUrl={project.image?.url || '/mockup/mokaps-jb-ocese.png'}
               />
             )
           })}

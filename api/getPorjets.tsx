@@ -19,6 +19,9 @@ export interface Project {
   publishedAt: string;
   hrfCode: string;
   hrfDemo: string;
+  image: {
+    url: string
+  }
   imageAlt: string;
   tag: Tag[];
 }
