@@ -41,7 +41,7 @@ export default function Projects() {
           projects: rawProjects,
         });        
       } catch (err) {
-        console.error("Error:", err);
+        console.error("Error:");
       }
     }
 
@@ -59,9 +59,9 @@ export default function Projects() {
                 key={project.id}
                 titleProject={project.titleProject}
                 clientProject={project.clientProject}
-                description={project.description}
-                hrfCode={project.hrfCode}
-                hrfDemo={project.hrfDemo}
+                description={project.description || 'Aqui va la descripcion.'}
+                hrfCode={project.hrfCode || '#projects'}
+                hrfDemo={project.hrfDemo || '#projects'}
                 tag={project.tag}
                 imageUrl={project.image?.url || '/mockup/mokaps-jb-ocese.png'}
               />
