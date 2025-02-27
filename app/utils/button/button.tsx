@@ -54,9 +54,6 @@ export function ButtonC({ hrf = '', text = '', download = false }: LogoProps) {
   );
 }
 
-import { Button } from '@heroui/button'
-import { useDisclosure } from "@heroui/modal";
-
 interface ButtonModalProps {
   text?: string;
   onOpen: () => void;

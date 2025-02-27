@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Socialmedia, fetchSocialMedias } from "@/api/getSocialMedia";
-import * as SiIcons from "react-icons/si";
+import * as FaIcons from "react-icons/fa";
 import Link from "next/link";
 
 export default function SocialMedia() {
@@ -16,7 +16,7 @@ export default function SocialMedia() {
     <div className="grid justify-center">
       <div className="sm:flex grid pt-3">
         {socialLinks.map(({ id, icon, link }) => {
-          const IconComponent = SiIcons[`Si${icon}` as keyof typeof SiIcons];
+          const IconComponent = FaIcons[`Fa${icon}` as keyof typeof FaIcons];
           return (
             <Link
               key={id}
