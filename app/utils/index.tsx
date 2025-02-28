@@ -7,6 +7,7 @@ import { CheckIcon, CopyIcon } from './icons/icons'
 import { Email } from './emails'
 import { ModalPreview } from './modal'
 import Tags from './tags'
+import { Loyout, TitleProject } from './layout'
 
 export {
   ScrollRevealEffect,
@@ -22,5 +23,7 @@ export {
   CheckIcon,
   Email,
   ModalPreview,
-  Tags
+  Tags,
+  Loyout,
+  TitleProject
 }
