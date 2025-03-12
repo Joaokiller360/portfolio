@@ -8,8 +8,17 @@ export interface Tag {
   Icon: string | null;
 }
 
-export interface Project {
+export interface Buttons {
   id: number;
+  hrfCode: string;
+  hrefContent: string
+  hrfDemo: string
+  active: boolean;
+}
+
+export interface Project {
+  imageUrl: string | undefined;
+  id: string;
   documentId: string;
   titleProject: string;
   clientProject: string;
@@ -17,13 +26,12 @@ export interface Project {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  hrfCode: string;
-  hrfDemo: string;
   image: {
     url: string
   }
   imageAlt: string;
   tag: Tag[];
+  buttons: Buttons[];
 }
 
 export interface ApiResponse {

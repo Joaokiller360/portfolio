@@ -6,9 +6,11 @@ interface LogoProps {
   hrf?: string; // URL o ruta del archivo
   text?: string;
   download?: boolean; // Indica si debe descargarse el archivo
+  id?: string;
+  style?: string
 }
 
-export function ButtonC({ hrf = '', text = '', download = false }: LogoProps) {
+export function ButtonC({ style = '', id = '', hrf = '', text = '', download = false }: LogoProps) {
   if (download && hrf) {
     // Manejar descargas con JavaScript
     const handleDownload = (e: React.MouseEvent) => {
@@ -23,6 +25,7 @@ export function ButtonC({ hrf = '', text = '', download = false }: LogoProps) {
       <div>
         <button
           onClick={handleDownload}
+          key={id}
           className='group relative inline-flex items-center overflow-hidden px-8 py-3 text-base font-medium border-2 text-colorButton border-colorButton hover:bg-colorButton hover:text-white rounded-2xl transition-all'
         >
           <span className='absolute -end-full transition-all group-hover:end-4'>
@@ -41,7 +44,8 @@ export function ButtonC({ hrf = '', text = '', download = false }: LogoProps) {
     <div>
       <Link
         href={hrf}
-        className='group relative inline-flex items-center overflow-hidden px-8 py-3 text-base font-medium border-2 text-colorButton border-colorButton hover:bg-colorButton hover:text-white rounded-2xl transition-all'
+        key={id}
+        className={`group relative inline-flex items-center overflow-hidden lg:px-8 px-4 py-3 text-base font-medium border-2 text-colorButton border-colorButton hover:bg-colorButton hover:text-white rounded-2xl transition-all ${style}`}
       >
         <span className='absolute -end-full transition-all group-hover:end-4'>
           <svg className='size-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>

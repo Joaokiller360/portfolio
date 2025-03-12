@@ -1,21 +1,22 @@
 'use client'
 
 import { Cards } from '@/app/utils'
-
-import { fetchProjst, Tag, Project } from '@/api/getPorjets'
+import { Tag, Project, Buttons } from '@/api/getPorjets'
 import { useEffect, useState } from "react";
 
 export default function Projects() {
 
   const [project, setProject] = useState<{
-    tags: Tag[]; // Definimos correctamente el tipo de `tags`
+    tags: Tag[];
+    buttons: Buttons[];
     projects: Project[];
   }>({
     tags: [],
     projects: [],
+    buttons: [],
   });
 
-  const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL
+  const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL;
 
   useEffect(() => {
     async function fetchProjst() {
@@ -26,22 +27,38 @@ export default function Projects() {
         }
         const data = await response.json();
 
+        console.log("Datos de los proyectos:", data);
+
         const rawProjects = data.data.map((project: Project) => ({
+          ...project
+        }));
+
+        const rawTag = data.data.map((project: Project) => ({
           ...project,
           tag: project.tag?.map((t: any) => ({
             id: t.id,
             IconName: t.IconName || 'Sin nombre',
-            Icon: t.Icon || null, // En lugar de convertir a ReactNode, dejamos el nombre del icono,
-            image: t.image?.data?.attributes?.url || '/mockup/mokaps-jb-ocese.png'
+            Icon: t.Icon || null,
           })),
         }));
-        
+
+        const rawButton = data.data.map((project: Project) => ({
+          button: project.buttons?.map((b: any) => ({
+            id: b.id,
+            hrfCode: b.hrfCode,
+            hrfDemo: b.hrfDemo,
+            hrefContent: b.hrefContent,
+            active: b.active,
+          })) || [],
+        }));
+
         setProject({
-          tags: rawProjects.flatMap((p: { tag: any }) => p.tag || []),
+          tags: rawTag.flatMap((p: { tag: any }) => p.tag || []),
           projects: rawProjects,
-        });        
+          buttons: rawButton.flatMap((p: { buttons: any }) => p.buttons || [])
+        });
       } catch (err) {
-        console.error("Error:");
+        console.error("Error:", err);
       }
     }
 
@@ -53,20 +70,18 @@ export default function Projects() {
       <section className="py-16" id="projects">
         <h2 className="text-3xl font-bold mb-8 text-center gradient-text">Mis Proyectos</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {project.projects.map((project) => {
-            return (
-              <Cards
-                key={project.id}
-                titleProject={project.titleProject}
-                clientProject={project.clientProject}
-                description={project.description || 'Aqui va la descripcion.'}
-                hrfCode={project.hrfCode || '#projects'}
-                hrfDemo={project.hrfDemo || '#projects'}
-                tag={project.tag}
-                imageUrl={project.image?.url || '/mockup/mokaps-jb-ocese.png'}
-              />
-            )
-          })}
+          {project.projects.map((p) => (  // Renombrar "project" a "p" para evitar confusión
+            <Cards
+              key={p.id}  // Usamos el "id" de cada proyecto como clave única
+              titleProject={p.titleProject}
+              clientProject={p.clientProject}
+              description={p.description}
+              buttons={p.buttons}
+              tag={p.tag}
+              imageUrl={p.image?.url || '/mockup/mokaps-jb-ocese.png'}
+              imageAlt={p.imageAlt}  // Si la propiedad existe
+            />
+          ))}
         </div>
       </section>
     </>
