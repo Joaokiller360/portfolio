@@ -69,18 +69,19 @@ export default function Projects() {
     <>
       <section className="py-16" id="projects">
         <h2 className="text-3xl font-bold mb-8 text-center gradient-text">Mis Proyectos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="md:columns-2 xl:columns-3 gap-6">
           {project.projects.map((p) => (  // Renombrar "project" a "p" para evitar confusión
-            <Cards
-              key={p.id}  // Usamos el "id" de cada proyecto como clave única
-              titleProject={p.titleProject}
-              clientProject={p.clientProject}
-              description={p.description}
-              buttons={p.buttons}
-              tag={p.tag}
-              imageUrl={p.image?.url || '/mockup/mokaps-jb-ocese.png'}
-              imageAlt={p.imageAlt}  // Si la propiedad existe
-            />
+            <div key={p.id} className="break-inside-avoid mb-6 min-h-[400px]">
+              <Cards
+                titleProject={p.titleProject}
+                clientProject={p.clientProject}
+                description={p.description}
+                buttons={p.buttons}
+                tag={p.tag}
+                imageUrl={p.image?.url || '/mockup/mokaps-jb-ocese.png'}
+                imageAlt={p.imageAlt}  // Si la propiedad existe
+              />
+            </div>
           ))}
         </div>
       </section>
