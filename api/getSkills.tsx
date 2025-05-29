@@ -10,17 +10,19 @@ const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL
 
 export const fetchSkills = async (): Promise<Skills[]> => {
   try {
-    const response = await fetch(`${apiUrl}/api/skills`);
+    const response = await fetch(`${apiUrl}/api/skill?populate=icon`);
     const data = await response.json();
 
-    if (!data || !data.data) {
+    const skills = data?.data?.icon;
+
+    if (!Array.isArray(skills)) {
       console.error("Estructura de datos inesperada:", data);
       return [];
     }
 
-    return data.data.map((item: any) => ({
+    return skills.map((item: any) => ({
       id: item.id ?? 0, // Asegurar que haya un ID
-      icon: item.Icon ?? '',
+      icon: item.icon ?? '',
       iconName: item.IconName ?? '',
     }));
   } catch (error) {

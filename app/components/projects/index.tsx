@@ -1,7 +1,7 @@
 'use client'
 
 import { Cards } from '@/app/utils'
-import { Tag, Project, Buttons } from '@/api/getPorjets'
+import { Tag, Project, Buttons, Descriptio } from '@/api/getPorjets'
 import { useEffect, useState } from "react";
 
 export default function Projects() {
@@ -10,11 +10,13 @@ export default function Projects() {
     tags: Tag[];
     buttons: Buttons[];
     projects: Project[];
+    Descriptio: Descriptio | null;  // Cambié esto para que sea un objeto único, no un array.
   }>({
     tags: [],
     projects: [],
     buttons: [],
-  });
+    Descriptio: null,  // Inicializado como null.
+  });  
 
   const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL;
 
@@ -42,6 +44,15 @@ export default function Projects() {
           })),
         }));
 
+        const rawDescriptio = data.data.map((project: Project) => ({
+          Descriptio: project.Descriptio ? {
+            id: project.Descriptio.id,
+            clientProject: project.Descriptio.clientProject,
+            description: project.Descriptio.description,
+            active: project.Descriptio.active,
+          } : null,
+        }));
+
         const rawButton = data.data.map((project: Project) => ({
           button: project.buttons?.map((b: any) => ({
             id: b.id,
@@ -55,6 +66,7 @@ export default function Projects() {
         setProject({
           tags: rawTag.flatMap((p: { tag: any }) => p.tag || []),
           projects: rawProjects,
+          Descriptio: rawDescriptio[0].Descriptio,
           buttons: rawButton.flatMap((p: { buttons: any }) => p.buttons || [])
         });
       } catch (err) {
@@ -65,6 +77,8 @@ export default function Projects() {
     fetchProjst();
   }, []);
 
+  console.log('Descriptio:', project.Descriptio);
+
   return (
     <>
       <section className="py-16" id="projects">
@@ -74,12 +88,12 @@ export default function Projects() {
             <div key={p.id} className="break-inside-avoid mb-6 min-h-[400px]">
               <Cards
                 titleProject={p.titleProject}
-                clientProject={p.clientProject}
-                description={p.description}
+                clientProject={project.Descriptio?.clientProject}
+                description={project.Descriptio?.description}
                 buttons={p.buttons}
                 tag={p.tag}
                 imageUrl={p.image?.url || '/mockup/mokaps-jb-ocese.png'}
-                imageAlt={p.imageAlt}  // Si la propiedad existe
+                imageAlt={p.imageAlt}
               />
             </div>
           ))}

@@ -1,14 +1,11 @@
 'use client'
 
 import { ButtonC, ScrollRevealEffect, ScrollRevealRightEffect, ModalPreview } from '@/app/utils';
-import { v4 as uuidv4 } from 'uuid';
 import { Image } from "@nextui-org/image";
 import React from 'react';
 
 interface ButtonNavProps {
   titleProject?: string;
-  clientProject?: string
-  description?: string;
   tag?: {
     id: number;
     IconName: string;
@@ -18,6 +15,16 @@ interface ButtonNavProps {
   imageAlt?: string;
   buttons?: Buttons[];
   style?: string;
+  Descriptio?: Descriptio[]
+  clientProject?: string,
+  description?: string
+}
+
+interface Descriptio {
+  id: number;
+  clientProject: string
+  description: string
+  active?: boolean;
 }
 
 interface Buttons {
@@ -30,14 +37,25 @@ interface Buttons {
 
 export default function Cards({
   titleProject = '',
-  clientProject = '',
-  description = '',
   imageAlt = '',
   imageUrl = '',
   tag = [],
   buttons = [],
+  Descriptio = [],
   style = '',
 }: ButtonNavProps) {
+
+  Descriptio = Descriptio ?? [];
+
+  const safeDescriptio = Array.isArray(Descriptio)
+    ? Descriptio
+    : Descriptio
+      ? [Descriptio]
+      : [];
+
+  console.log('safeDescriptio:', safeDescriptio);
+
+
 
   return (
     <>
@@ -88,9 +106,19 @@ export default function Cards({
                 })}
               </div>
 
-              <div className="flex justify-center pt-5">
-                <ModalPreview titleProject={titleProject} clientProject={clientProject} description={description} tag={tag} />
-              </div>
+              {Array.isArray(Descriptio) && Descriptio.map(({ id, clientProject, description, active }) => (
+                active && (
+                  <div key={id} className="flex justify-center pt-5">
+                    <ModalPreview
+                      key={id}
+                      clientProject={clientProject}
+                      description={description}
+                      tag={tag}
+                    />
+                  </div>
+                )
+              ))}
+
             </div>
           </div>
         </ScrollRevealEffect>

@@ -17,13 +17,11 @@ interface TitleProps {
 
 export function TitleProject({ children, style, title = '' }: TitleProps) {
   return (
-    <Loyout>
-      <div className="grid">
-        <div className={`${style}`}>{title}</div>
-        <div>
-          {children}
-        </div>
+    <div className="grid">
+      <div className={`${style}`}>{title}</div>
+      <div>
+        {children}
       </div>
-    </Loyout>
+    </div>
   )
 }

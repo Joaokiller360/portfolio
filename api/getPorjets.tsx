@@ -16,12 +16,24 @@ export interface Buttons {
   active: boolean;
 }
 
+export interface Descriptio {
+  id: number;
+  clientProject: string
+  description: string
+  active: boolean;
+}
+
 export interface Project {
+  Descriptio?: {
+    id: number;
+    clientProject: string
+    description: string
+    active: boolean;
+  }
   imageUrl: string | undefined;
+  titleProject?: string;
   id: string;
   documentId: string;
-  titleProject: string;
-  clientProject: string;
   description: string;
   createdAt: string;
   updatedAt: string;
@@ -32,18 +44,6 @@ export interface Project {
   imageAlt: string;
   tag: Tag[];
   buttons: Buttons[];
-}
-
-export interface ApiResponse {
-  data: Project[];
-  meta: {
-    pagination: {
-      page: number;
-      pageSize: number;
-      pageCount: number;
-      total: number;
-    };
-  };
 }
 
 const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL
@@ -67,7 +67,7 @@ export async function fetchProjst() {
     }
 
     // Convierte la respuesta en formato JSON
-    const data: ApiResponse = await response.json();
+    const data: Project = await response.json();
 
     return NextResponse.json(data);
   } catch (error) {

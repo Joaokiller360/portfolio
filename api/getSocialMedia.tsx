@@ -6,22 +6,24 @@ export interface Socialmedia {
   id: number;
 }
 
-const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL
+const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL;
 
 export const fetchSocialMedias = async (): Promise<Socialmedia[]> => {
   try {
-    const response = await fetch(`${apiUrl}/api/social-medias`);
+    const response = await fetch(`${apiUrl}/api/social-media?populate=socialMedia`);
     const data = await response.json();
 
-    if (!data || !data.data) {
-      console.error("Estructura de datos inesperada:", data);
+    const socialMediaArray = data?.data?.socialMedia;
+
+    if (!Array.isArray(socialMediaArray)) {
+      console.error("❌ Estructura inesperada. No es un array:", data);
       return [];
     }
 
-    return data.data.map((item: any) => ({
-      id: item.id ?? 0, // Asegurar que haya un ID
-      icon: item.Icon ?? "",
-      link: item.Link ?? "",
+    return socialMediaArray.map((item: any) => ({
+      id: item.id ?? 0,
+      icon: item.icon ?? "",
+      link: item.link ?? "",
     }));
   } catch (error) {
     console.error("Error al obtener los datos:", error);
@@ -29,11 +31,12 @@ export const fetchSocialMedias = async (): Promise<Socialmedia[]> => {
   }
 };
 
+
 export const getStaticProps: GetStaticProps = async () => {
   const data = await fetchSocialMedias();
 
   return {
     props: { data },
-    revalidate: 120, // Revalida cada 10 segundos
+    revalidate: 120,
   };
 };

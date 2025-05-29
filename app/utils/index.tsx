@@ -1,5 +1,5 @@
 import { ScrollRevealEffect, ScrollRevealRightEffect } from './animation/animations'
-import { ButtonC, ButtonNav, ButtonModal } from './button/button'
+import { ButtonC, ButtonNav, ButtonModal, ButtonNavComponents } from './button/button'
 import { Skills, Skil } from './skills/skills'
 import Cards from './cards/cads'
 import SocialMedia from './socialMedia/socialMedia'
@@ -25,5 +25,6 @@ export {
   ModalPreview,
   Tags,
   Loyout,
-  TitleProject
+  TitleProject,
+  ButtonNavComponents
 }

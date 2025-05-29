@@ -85,11 +85,12 @@ interface ButtonNavProps {
   hrf?: string;
   text?: string;
   icon?: React.ReactNode;
+  style?: string;
 }
 
-export function ButtonNav({ hrf = '', text = '', icon }: ButtonNavProps) {
+export function ButtonNav({ hrf = '', text = '', icon = '', style = '' }: ButtonNavProps) {
   return (
-    <div>
+    <div className={style}>
       <Link
         href={hrf}
         style={{ display: 'flex', alignItems: 'center', gap: '8px' }} // Estilos directamente en el Link
@@ -98,5 +99,26 @@ export function ButtonNav({ hrf = '', text = '', icon }: ButtonNavProps) {
         <span className="hidden sm:inline">{text}</span>
       </Link>
     </div>
+  );
+}
+
+interface ButtonNavComponentsProps {
+  hrf?: string;
+  text?: string;
+  icon?: React.ReactNode;
+  style?: string;
+}
+
+export function ButtonNavComponents({ hrf = '', text = '', icon = '', style = '' }: ButtonNavComponentsProps) {
+  return (
+    <li>
+      <a
+        href={hrf}
+        className={`px-4 py-3 flex items-center space-x-4 rounded-lg${style}`} // Estilos directamente en el Link
+      >
+        {icon && <span>{icon}</span>}
+        <span className="hidden sm:inline w-full">{text}</span>
+      </a>
+    </li>
   );
 }

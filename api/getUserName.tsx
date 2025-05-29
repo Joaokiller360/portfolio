@@ -11,7 +11,7 @@ const apiUrl = process.env.NEXT_PUBLIC_BACKND_URL;
 
 export const fetchUserName = async (): Promise<UserName[]> => {
   try {
-    const response = await fetch(`${apiUrl}/api/user-names`);
+    const response = await fetch(`${apiUrl}/api/user-name`);
     const data = await response.json();
 
     if (!data || !data.data) {
@@ -19,12 +19,17 @@ export const fetchUserName = async (): Promise<UserName[]> => {
       return [];
     }
 
-    return data.data.map((item: any) => ({
-      id: item.id ?? 0,
-      userName: item.userName ?? 'Joao Barres',
-      dev: item.dev ?? 'Desarrollador Web / Junior',
-      email: item.email ?? 'joao1.joao3@gmail.com',
-    }));
+    const item = data.data;
+
+    return [
+      {
+        id: item.id ?? 0,
+        userName: item.userName ?? 'Joao Barres', // ← ojo con la minúscula
+        dev: item.dev ?? 'Desarrollador Web / Junior',
+        email: item.email ?? 'joao1.joao3@gmail.com',
+      },
+    ];
+
   } catch (error) {
     console.error("Error al obtener los datos:", error);
     return [];

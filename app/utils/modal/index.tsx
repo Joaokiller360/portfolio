@@ -10,7 +10,6 @@ import {
 import { Button } from '@heroui/button'
 
 interface ModalDescriptions {
-  titleProject?: string;
   clientProject?: string;
   description?: string;
   hrfCode?: string;
@@ -23,11 +22,8 @@ interface ModalDescriptions {
 }
 
 export function ModalPreview({
-  titleProject = '',
   clientProject = '',
   description = '',
-  hrfCode = '',
-  hrfDemo = '',
   tag = [],
 }: ModalDescriptions) {
 
@@ -41,10 +37,6 @@ export function ModalPreview({
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                <div>
-                  <p className='text-2xl'>Nombre del proyecto:</p>
-                  <p className="text-xl font-semibold pt-2">{titleProject}</p>
-                </div>
                 <div>
                   <p className='text-2xl'>Nombre del Cliente:</p>
                   <p className="text-xl font-semibold pt-2">{clientProject}</p>

@@ -10,6 +10,10 @@ export default function SocialMedia() {
 
   useEffect(() => {
     fetchSocialMedias().then(setSocialLinks);
+    fetchSocialMedias().then((data) => {
+      console.log("Social Links:", data); // 👈 Agregá esto
+      setSocialLinks(data);
+    });
   }, []);
 
   return (
