@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Create Portafoli By JB",
 };
 
+// eslint-disable-next-line react/no-children-prop
+
 export default function RootLayout({
   children,
 }: Readonly<{
