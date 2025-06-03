@@ -23,9 +23,9 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <Analytics />
         </Providers>
       </body>
-      <Analytics />
     </html>
   );
 }
