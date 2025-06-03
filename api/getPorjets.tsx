@@ -68,8 +68,9 @@ export async function fetchProjst() {
 
     // Convierte la respuesta en formato JSON
     const data: Project = await response.json();
-
+    
     return NextResponse.json(data);
+
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }

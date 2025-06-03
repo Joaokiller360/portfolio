@@ -13,7 +13,7 @@ interface TagsProps {
 export default function Tags({ tag = [] }: TagsProps) {
   return (
     <div className="flex flex-wrap gap-2">
-      {tag.map(({ Icon, IconName, id }) => {
+      {tag.map(({ Icon, id }) => {
         const IconComponent = Icon ? SiIcons[`Si${Icon}` as keyof typeof SiIcons] : null;
         return (
           <div
@@ -23,7 +23,7 @@ export default function Tags({ tag = [] }: TagsProps) {
             <span className="icon text-2xl flex justify-center">
               {IconComponent ? <IconComponent className="mr-2" /> : null}
             </span>
-            <span className="text-sm font-medium">{IconName}</span>
+            <span className="text-sm font-medium">{Icon}</span>
           </div>
         );
       })}
