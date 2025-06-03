@@ -75,7 +75,7 @@ export default function Projects() {
     }
 
     fetchProjst();
-  }, []);
+  }, [apiUrl]);
 
   console.log('Descriptio:', project.Descriptio);
 
