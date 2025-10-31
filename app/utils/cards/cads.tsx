@@ -62,13 +62,8 @@ export default function Cards({
       <div className={`${style}`}>
         <ScrollRevealEffect>
           <div className={`bg-sectionColor rounded-3xl p-5 shadow-lg hover:shadow-xl transition-shadow duration-300`}>
-            <div className="flex justify-center">
-              <ScrollRevealRightEffect>
-                <p className="text-2xl font-semibold">{titleProject}</p>
-              </ScrollRevealRightEffect>
-            </div>
             <div>
-              <div className="pt-5">
+              <div>
                 <Image
                   isZoomed
                   alt={imageAlt}
@@ -76,6 +71,9 @@ export default function Cards({
                   src={imageUrl || "Image"}
                 />
               </div>
+                <div className="flex justify-center pt-2.5">
+                  <p className="text-3xl font-semibold mb:text-center">{titleProject}</p>
+                </div>
               <div className="flex justify-around pt-5 columns-2 gap-5">
                 {buttons.map(({ id, hrfCode, hrfDemo, hrefContent, active }, index) => {
                   return (

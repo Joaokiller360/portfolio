@@ -81,7 +81,7 @@ export default function Projects() {
 
       <div className="md:columns-2 xl:columns-3 gap-6">
         {project.projects.map((p: any) => (
-          <div key={p.id} className="break-inside-avoid mb-6 min-h-[400px]">
+          <div key={p.id} className="break-inside-avoid mb-6 min-h-auto">
             <Cards
               titleProject={p.titleProject}
               clientProject={p.description?.clientProject || "Sin cliente"}
