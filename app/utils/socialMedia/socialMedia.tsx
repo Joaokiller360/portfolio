@@ -27,7 +27,7 @@ export default function SocialMedia() {
               href={link.startsWith("http") ? link : `https://${link}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 mx-2 sm:my-0 my-2 rounded-full text-background border-2 text-colorButton border-colorButton hover:bg-colorButton hover:text-white transition-all flex justify-center"
+              className="px-3 py-2 mx-2 sm:my-0 my-2 rounded-full text-background border-2 text-(--colorButton) border-(--colorButton) hover:bg-(--colorButton) hover:text-white transition-all flex justify-center"
             >
               <span className="flex items-center hover:text-white">
                 {IconComponent ? <IconComponent className="mr-2 scale-125" /> : null}

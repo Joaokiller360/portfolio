@@ -1,7 +1,7 @@
 'use client'
 
-import { ButtonC, ScrollRevealEffect, ScrollRevealRightEffect, ModalPreview } from '@/app/utils';
-import { Image } from "@nextui-org/image";
+import { ButtonC, ScrollRevealEffect, ModalPreview } from '@/app/utils';
+import { Image } from "@heroui/react";
 import React from 'react';
 
 interface ButtonNavProps {
@@ -61,7 +61,7 @@ export default function Cards({
     <>
       <div className={`${style}`}>
         <ScrollRevealEffect>
-          <div className={`bg-sectionColor rounded-3xl p-5 shadow-lg hover:shadow-xl transition-shadow duration-300`}>
+          <div className={`bg-(--sectionColor) rounded-3xl p-5 shadow-lg hover:shadow-xl transition-shadow duration-300`}>
             <div>
               <div>
                 <Image

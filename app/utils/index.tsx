@@ -9,7 +9,7 @@ import { ModalPreview } from './modal'
 import Tags from './tags'
 import { Loyout, TitleProject } from './layout'
 
-export {
+export  {
   ScrollRevealEffect,
   ScrollRevealRightEffect,
   ButtonC,

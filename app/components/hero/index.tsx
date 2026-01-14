@@ -1,7 +1,7 @@
 'use client'
 
 import { ScrollRevealEffect, ButtonC, ScrollRevealRightEffect, SocialMedia, Email } from "@/app/utils";
-import { Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import { useEffect, useState } from "react";
 import { UserName, fetchUserName } from '@/api/getUserName'
 

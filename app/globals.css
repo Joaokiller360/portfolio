@@ -1,11 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
+  /* Base */
   --background: #16161a;
   --foreground: #fffffe;
-  --background-section: #16161a; /* Color para la sección en modo claro */
+  --background-section: #16161a;
+}
+
+@theme inline {
+  /* Personal JB */
+  --colorButton: #7f5af0;
+  --sectionColor: #242629;
+  --transparent: #00000000;
 }
 
 body {
@@ -13,6 +19,7 @@ body {
   background: var(--background);
 }
 
+/* Gradiente personalizado */
 .MyGradient {
   mask-image: linear-gradient(
     to right,
@@ -23,8 +30,8 @@ body {
   );
 }
 
-/* Estilos para el scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   height: 0;
-  width: 0; /* Ancho del scrollbar */
+  width: 0;
 }

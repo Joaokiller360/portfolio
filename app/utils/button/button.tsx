@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link"
+import React from "react";
 
 interface LogoProps {
   hrf?: string; // URL o ruta del archivo
@@ -26,7 +27,7 @@ export function ButtonC({ style = '', id = '', hrf = '', text = '', download = f
         <button
           onClick={handleDownload}
           key={id}
-          className='group relative inline-flex items-center overflow-hidden px-8 py-3 text-base font-medium border-2 text-colorButton border-colorButton hover:bg-colorButton hover:text-white rounded-2xl transition-all'
+          className='group cursor-pointer relative inline-flex items-center overflow-hidden px-8 py-3 text-base font-medium border-2 text-(--colorButton) border-(--colorButton) hover:bg-(--colorButton) hover:text-white rounded-2xl transition-all'
         >
           <span className='absolute -end-full transition-all group-hover:end-4'>
             <svg className='size-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
@@ -45,7 +46,7 @@ export function ButtonC({ style = '', id = '', hrf = '', text = '', download = f
       <Link
         href={hrf}
         key={id}
-        className={`group relative inline-flex items-center overflow-hidden lg:px-8 px-4 py-3 text-base font-medium border-2 text-colorButton border-colorButton hover:bg-colorButton hover:text-white rounded-2xl transition-all ${style}`}
+        className={`group relative inline-flex items-center overflow-hidden lg:px-8 px-4 py-3 text-base font-medium border-2 text-(--colorButton) border-(--colorButton) hover:bg-(--colorButton) hover:text-white rounded-2xl transition-all ${style}`}
       >
         <span className='absolute -end-full transition-all group-hover:end-4'>
           <svg className='size-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
@@ -68,7 +69,7 @@ export function ButtonModal({ text = '', onOpen }: ButtonModalProps) {
     <div>
       <button
         onClick={onOpen} // Llama a la función que abre el modal
-        className='group relative inline-flex items-center overflow-hidden px-8 py-3 text-base font-medium border-2 text-colorButton border-colorButton hover:bg-colorButton hover:text-white rounded-2xl transition-all'
+        className='group relative inline-flex items-center overflow-hidden px-8 py-3 text-base font-medium border-2 text-(--colorButton) border-(--colorButton) hover:bg-(--colorButton) hover:text-white rounded-2xl transition-all'
       >
         <span className='absolute -end-full transition-all group-hover:end-4'>
           <svg className='size-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>

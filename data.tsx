@@ -1,4 +1,5 @@
 import { BookText, HomeIcon, UserRound, Rocket } from "lucide-react";
+import React from "react";
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export const userName = [

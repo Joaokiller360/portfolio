@@ -1,3 +1,5 @@
+'use client'
+
 import Hero from './hero/index'
 import Header from './nav/index'
 import About from './about'

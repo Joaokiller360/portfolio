@@ -16,7 +16,7 @@ export default function Home() {
         {itemsNavbar.map((item) => (
           <div
             key={item.id}
-            className="px-3 py-2 transition duration-150 rounded-full cursor-pointer hover:bg-colorButton"
+            className="px-3 py-2 transition duration-150 rounded-full cursor-pointer hover:bg-(--colorButton)"
           >
             <ButtonNav hrf={item.link} text={`${item.title}`} icon={item.icon} />
           </div>
