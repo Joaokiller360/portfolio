@@ -1,6 +1,6 @@
 'use client'
 
-import { ScrollRevealEffect, ButtonC, ScrollRevealRightEffect, SocialMedia, Email } from "@/app/utils";
+import { ScrollRevealEffect, ButtonC, ScrollRevealRightEffect, SocialMedia, Email, ModalCurriculum } from "@/app/utils";
 import { Image } from "@heroui/react";
 import { useEffect, useState } from "react";
 import { UserName, fetchUserName } from '@/api/getUserName'
@@ -37,7 +37,8 @@ export default function Hero() {
             <div className="pt-5 flex justify-center">
               <div className="flex flex-col sm:flex-row gap-4">
                 <ButtonC hrf="#projects" text="Ver mis proyectos" />
-                <ButtonC hrf="./curriculum/cv.pdf" text="Descargar CV" download />
+                <ModalCurriculum buttonText="Ver Currículum" curriculumUrl="./curriculum/BARRES-JOAO-ALEXANDER-CURRICULUM.pdf" />
+                <ButtonC hrf="./curriculum/BARRES-JOAO-ALEXANDER-CURRICULUM.pdf" text="Descargar CV" download />
               </div>
             </div>
 

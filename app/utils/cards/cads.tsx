@@ -54,6 +54,8 @@ export default function Cards({
       : [];
 
   console.log('safeDescriptio:', safeDescriptio);
+  console.log('🏷️ Tags recibidos en Cards:', tag);
+  console.log('📝 Descriptio recibido en Cards:', Descriptio);
 
 
 
@@ -71,9 +73,10 @@ export default function Cards({
                   src={imageUrl || "Image"}
                 />
               </div>
-                <div className="flex justify-center pt-2.5">
-                  <p className="text-3xl font-semibold mb:text-center">{titleProject}</p>
-                </div>
+              <div className="flex justify-center pt-2.5">
+                <p className="text-3xl font-semibold mb:text-center">{titleProject}</p>
+              </div>
+
               <div className="flex justify-around pt-5 columns-2 gap-5">
                 {buttons.map(({ id, hrfCode, hrfDemo, hrefContent, active }, index) => {
                   return (
@@ -112,6 +115,7 @@ export default function Cards({
                       clientProject={clientProject}
                       description={description}
                       tag={tag}
+                      img={imageUrl}
                     />
                   </div>
                 )
