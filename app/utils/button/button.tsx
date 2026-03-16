@@ -1,3 +1,5 @@
+'use client'
+
 // Modal para mostrar el currículum en grande
 import { useState } from 'react';
 

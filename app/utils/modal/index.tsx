@@ -4,8 +4,6 @@ import { ButtonModal, Tags } from '@/app/utils'
 import { Image } from "@heroui/react";
 import { useState } from 'react'
 
-//https://strapi.joaobarres.dev/uploads/538shots_so_0f69bd1d5f.png
-
 interface ModalDescriptions {
   clientProject?: string;
   description?: string;
