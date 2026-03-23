@@ -8,6 +8,7 @@ import { Email } from './emails'
 import { ModalPreview } from './modal'
 import Tags from './tags'
 import { Loyout, TitleProject } from './layout'
+import Year from './year'
 
 export  {
   ScrollRevealEffect,
@@ -28,4 +29,5 @@ export  {
   TitleProject,
   ButtonNavComponents,
   ModalCurriculum,
+  Year
 }
