@@ -9,6 +9,7 @@ import { ModalPreview } from './modal'
 import Tags from './tags'
 import { Loyout, TitleProject } from './layout'
 import Year from './year'
+import FullScreenLoader from './loading'
 
 export  {
   ScrollRevealEffect,
@@ -29,5 +30,6 @@ export  {
   TitleProject,
   ButtonNavComponents,
   ModalCurriculum,
-  Year
+  Year,
+  FullScreenLoader
 }
