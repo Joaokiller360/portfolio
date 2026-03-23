@@ -20,7 +20,7 @@ export default function Hero() {
           <ScrollRevealEffect>
             {userName.map(({ dev, id, userName, email }) => (
               <div key={id}>
-                <h1 className="text-5xl font-bold mb-4 gradient-text">
+                <h1 className="md:text-5xl text-4xl font-bold mb-4 gradient-text">
                   Hola, soy {userName} 👋
                 </h1>
                 <p className="text-xl mb-4 text-muted-foreground">
@@ -32,7 +32,13 @@ export default function Hero() {
             ))}
             <SocialMedia />
 
+            <ScrollRevealRightEffect>
+              <div className="absolute -bottom-96 xs:-left-0 md:-left-20 xl:-left-96 sm:w-60 w-40 h-auto z-auto">
+                <Image src="/media/joaoDev.webp" alt="JoaoDev" />
+              </div>
+            </ScrollRevealRightEffect>
           </ScrollRevealEffect>
+
           <ScrollRevealEffect>
             <div className="pt-5 flex justify-center">
               <div className="flex flex-col sm:flex-row gap-4">
@@ -45,11 +51,6 @@ export default function Hero() {
           </ScrollRevealEffect>
         </div>
       </section>
-      <ScrollRevealRightEffect>
-        <div className="absolute bottom-0 left-0 sm:w-80 w-40 h-auto">
-          <Image src="/media/joaoDev.webp" alt="JoaoDev" />
-        </div>
-      </ScrollRevealRightEffect>
     </>
   );
 }
